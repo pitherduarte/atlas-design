@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="900" prefWidth="1440" stylesheets="@../estilos/Atlas.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="atlas.interfacegrafica.MainController" styleClass="app-root">
+    <left>
+        <VBox fx:id="sidebar" minWidth="240" prefWidth="240" maxWidth="240" styleClass="sidebar">
+            <HBox fx:id="brandRow" alignment="CENTER_LEFT" spacing="12" styleClass="brand-row">
+                <Label fx:id="logoLabel" accessibleText="Atlas" text="Atlas"/>
+                <Button fx:id="collapseButton" accessibleText="Recolher navegação"
+                        onAction="#toggleSidebar" styleClass="icon-button"/>
+            </HBox>
+            <VBox fx:id="navigation" spacing="6">
+                <Button fx:id="homeButton" text="Início" onAction="#showDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="ordersButton" text="Pedidos" onAction="#showOrders" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="hallButton" text="Salão" onAction="#showHall" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="menuButton" text="Menu" onAction="#showMenu" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="staffButton" text="Funcionários" onAction="#showStaff" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="reportsButton" text="Relatórios" onAction="#showReports" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="historyButton" text="Histórico" onAction="#showHistory" maxWidth="Infinity" styleClass="nav-button"/>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Region styleClass="divider"/>
+            <Button fx:id="settingsButton" text="Configurações" onAction="#showSettings"
+                    maxWidth="Infinity" styleClass="nav-button, settings-nav-button"/>
+        </VBox>
+    </left>
+    <center>
+        <BorderPane styleClass="workspace">
+            <top>
+                <HBox alignment="CENTER_RIGHT" spacing="12" fillHeight="false"
+                      minHeight="72" prefHeight="72" styleClass="topbar">
+                    <Label text="MC" styleClass="avatar"/>
+                    <VBox spacing="2" minWidth="103">
+                        <Label text="Marina Costa" styleClass="user-name"/>
+                        <Label text="Gerente" styleClass="user-role"/>
+                    </VBox>
+                    <Button fx:id="logoutButton" accessibleText="Sair"
+                            onAction="#logout" styleClass="icon-button, logout-button"/>
+                </HBox>
+            </top>
+            <center>
+                <StackPane fx:id="contentHost" styleClass="content-host"/>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>

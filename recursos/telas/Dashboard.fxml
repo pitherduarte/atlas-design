@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="page-scroll"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="atlas.interfacegrafica.DashboardController">
+    <VBox styleClass="dashboard-page">
+        <Label fx:id="greetingLabel" text="Boa tarde, Marina." styleClass="page-title"/>
+        <Label fx:id="dateLabel" text="Domingo, 15 de novembro de 2026 · 12:35" styleClass="page-subtitle"><VBox.margin><Insets top="10"/></VBox.margin></Label>
+        <Label text="Panorama do restaurante" styleClass="section-title"><VBox.margin><Insets top="46" bottom="19"/></VBox.margin></Label>
+        <GridPane fx:id="cards" hgap="16" vgap="16">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33.333" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.333" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.334" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+        <Button GridPane.columnIndex="0" GridPane.rowIndex="0"
+                accessibleText="Salão" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-blue"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-hall.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Salão" styleClass="card-title"/>
+                            <Label text="Ocupação das mesas" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="137">
+                            <Label text="03" styleClass="metric-number"/>
+                            <Label text="Ocupadas" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="45" prefWidth="137">
+                            <Label text="05" styleClass="metric-number"/>
+                            <Label text="Livres" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="02 com conta solicitada" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="0"
+                accessibleText="Pedidos" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-violet"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-orders.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Pedidos" styleClass="card-title"/>
+                            <Label text="Fila de pedidos" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="newOrders" text="01" styleClass="metric-number, red-number"/>
+                            <Label text="Novo" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="preparingOrders" text="02" styleClass="metric-number, amber-number"/>
+                            <Label text="Em preparo" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="readyOrders" text="03" styleClass="metric-number, blue-number"/>
+                            <Label text="Prontos" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="orderCount" text="44 pedidos no dia da demonstração" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button GridPane.columnIndex="2" GridPane.rowIndex="0"
+                accessibleText="Atendimento" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-amber"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-service.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Atendimento" styleClass="card-title"/>
+                            <Label text="Solicitações do salão" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="137">
+                            <Label text="02" styleClass="metric-number"/>
+                            <Label text="Pendentes" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Mesas 07 e 09" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button GridPane.columnIndex="0" GridPane.rowIndex="1"
+                accessibleText="Financeiro" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-blue"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-finance.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Financeiro" styleClass="card-title"/>
+                            <Label text="Contas solicitadas" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="137">
+                            <Label text="02" styleClass="metric-number"/>
+                            <Label text="Comandas" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="110" prefWidth="180" HBox.hgrow="ALWAYS">
+                            <Label text="R$ 140,00" styleClass="metric-number, amount-number"/>
+                            <Label text="Em aberto" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Mesas 04 e 08" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="1"
+                accessibleText="Produção" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-violet"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-production.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Produção" styleClass="card-title"/>
+                            <Label text="Pedidos em andamento por estação" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="kitchenOrders" text="04" styleClass="metric-number"/>
+                            <Label text="Cozinha" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="barOrders" text="01" styleClass="metric-number"/>
+                            <Label text="Bar" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                        <VBox spacing="2" minWidth="45" prefWidth="103">
+                            <Label fx:id="bakeryOrders" text="01" styleClass="metric-number"/>
+                            <Label text="Padaria" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Acompanhar filas de preparo" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button GridPane.columnIndex="2" GridPane.rowIndex="1"
+                accessibleText="Higienização" maxWidth="Infinity" styleClass="metric-card">
+            <graphic>
+                <VBox fillWidth="true" styleClass="metric-content">
+                    <HBox spacing="10" fillHeight="false" styleClass="metric-header">
+                        <StackPane styleClass="card-icon, tone-green"><ImageView fitWidth="24" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/card-cleaning.png"/></image></ImageView></StackPane>
+                        <VBox spacing="4" styleClass="metric-heading">
+                            <Label text="Higienização" styleClass="card-title"/>
+                            <Label text="Mesas aguardando limpeza" styleClass="card-subtitle" wrapText="true"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <StackPane styleClass="metric-arrow"><ImageView fitWidth="17" preserveRatio="true" mouseTransparent="true"><image><Image url="@../imagens/arrow.png"/></image></ImageView></StackPane>
+                    </HBox>
+                    <Region styleClass="divider"/>
+                    <HBox spacing="14" styleClass="metric-values">
+                        <VBox spacing="2" minWidth="45" prefWidth="137">
+                            <Label text="02" styleClass="metric-number, amber-number"/>
+                            <Label text="Aguardando" styleClass="metric-caption" wrapText="true"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Mesas 03 e 06" styleClass="card-footnote"/>
+                </VBox>
+            </graphic>
+        </Button>
+        </GridPane>
+    </VBox>
+</ScrollPane>

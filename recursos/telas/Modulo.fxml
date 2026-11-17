@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="atlas.interfacegrafica.ModuleController" fitToWidth="true" hbarPolicy="NEVER" styleClass="page-scroll">
+    <VBox fx:id="content" spacing="18" styleClass="page-root">
+        <VBox fx:id="header" spacing="4">
+            <Label fx:id="kicker" visible="false" managed="false" styleClass="kicker"/>
+            <Label fx:id="titleLabel" text="Módulo" styleClass="page-title"/>
+            <Label fx:id="descriptionLabel" text="Descrição do módulo." wrapText="true" styleClass="page-subtitle"/>
+        </VBox>
+    </VBox>
+</ScrollPane>
